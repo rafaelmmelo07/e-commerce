@@ -9,6 +9,13 @@ public class Main {
         Scanner leitor = new Scanner(System.in);
         ControleEstoque controleEstoque = new ControleEstoque();
 
+
+
+
+
+
+
+        //===================================================== AREA DO ADM =====================================================
         int opc;
         do {
             System.out.println("\n");
@@ -63,12 +70,16 @@ public class Main {
 
 
           controleEstoque.removerEstoque(numeroItem);
-      }
+        }
   }
-
-
-
-
         }while (opc!= 4);
     }
+//===========================================================================================================
+
+
+
+
+    ////  =======================================   AREA DO CLIETE ===================================
+
+
 }

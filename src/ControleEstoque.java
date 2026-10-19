@@ -32,7 +32,7 @@ public void adicionarProduto(String nome, BigDecimal preco) {
 
                 System.out.println("NUMERO PRODUTO:  " + produto.getId());
                 System.out.println(" NOME: " + produto.getNome());
-                System.out.println(" PRECO: " + produto.getPreco());
+                System.out.println(" PRECO: " + produto.getPreco()+ "\n");
 
             }
         }
