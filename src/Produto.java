@@ -14,6 +14,15 @@ public class Produto {
 
     };
 
+
+    public Produto(int id ,String nome, BigDecimal preco, int quantidadeEstoque){
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidadeEstoque = quantidadeEstoque;
+
+    };
+
     public Produto(){};
 
     public String getNome() {

@@ -9,11 +9,7 @@ public class Main {
         Scanner leitor = new Scanner(System.in);
         ControleEstoque controleEstoque = new ControleEstoque();
 
-
-
-
-
-
+        controleEstoque.listarEstoque();
 
         //===================================================== AREA DO ADM =====================================================
         int opc;
@@ -22,10 +18,11 @@ public class Main {
         System.out.println("E-COMMERCE ");
 
         System.out.println("PRODUTOS: ");
-        System.out.println("[1] cadastrar produtos ");
-        System.out.println("[2] listar produtos  ");
-        System.out.println("[3] deletar produto ");
-        System.out.println("[4] SAIR ");
+        System.out.println("[1] Cadastrar produtos ");
+        System.out.println("[2] Listar produtos  ");
+        System.out.println("[3] Deletar produto ");
+        System.out.println("[4] Buscar produto por ID ");
+        System.out.println("[5] SAIR ");
         opc= leitor.nextInt();
 
   switch (opc){
@@ -74,8 +71,11 @@ public class Main {
 
           controleEstoque.removerEstoque(numeroItem);
         }
+
+      case 4:
+          controleEstoque.buscarPorID();
   }
-        }while (opc!= 4);
+        }while (opc!= 5);
     }
 //===============================================================================================================
 
