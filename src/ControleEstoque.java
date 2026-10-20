@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ControleEstoque {
-    private  ArrayList<Produto> estoque = new ArrayList<>();
+  private   ArrayList<Produto> estoque = new ArrayList<>();
 
     public ControleEstoque(){}
 
 
-public void adicionarProduto(String nome, BigDecimal preco) {
-    Produto produto = new Produto(nome, preco);
+public void adicionarProduto(String nome, BigDecimal preco, int quantidadeEstoque) {
+    Produto produto = new Produto(nome, preco, quantidadeEstoque);
 
     for (int i = 0; i < estoque.size(); i++) {
         if (estoque.get(i).getId() == produto.getId()) {
@@ -33,6 +33,8 @@ public void adicionarProduto(String nome, BigDecimal preco) {
                 System.out.println("NUMERO PRODUTO:  " + produto.getId());
                 System.out.println(" NOME: " + produto.getNome());
                 System.out.println(" PRECO: " + produto.getPreco()+ "\n");
+                System.out.println(" ESTOQUE " + produto.getQuantidadeEstoque());
+
 
             }
         }

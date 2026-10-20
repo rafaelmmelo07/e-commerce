@@ -37,7 +37,10 @@ public class Main {
           System.out.println("Digite o preço ");
           BigDecimal preco = leitor.nextBigDecimal();
 
-           controleEstoque.adicionarProduto(nome,preco);
+          System.out.println("Digite a quantida no estoque");
+          int quantidadeEstoque = leitor.nextInt();
+
+           controleEstoque.adicionarProduto(nome,preco, quantidadeEstoque);
            break;
 
       case 2:
@@ -74,7 +77,7 @@ public class Main {
   }
         }while (opc!= 4);
     }
-//===========================================================================================================
+//===============================================================================================================
 
 
 

@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public class ItemPedido {
+public class  ItemPedido  extends  ControleEstoque{
 
     private Produto produto;
     private Integer quantidade;
@@ -19,4 +19,12 @@ public class ItemPedido {
     public BigDecimal calcularSubtotal(){
       return produto.getPreco().multiply(BigDecimal.valueOf(quantidade))  ;
     };
+
+
+
+public void adicionar(){
+
+
+}
+
 }

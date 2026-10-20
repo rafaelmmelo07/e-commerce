@@ -4,12 +4,13 @@ public class Produto {
     private String nome;
     private int id = 0;
     private BigDecimal preco;
-    private  Integer quantidadeEstoque;
+    private  int quantidadeEstoque;
 
 
-    public Produto(String nome, BigDecimal preco){
+    public Produto(String nome, BigDecimal preco, int quantidadeEstoque){
         this.nome = nome;
         this.preco = preco;
+        this.quantidadeEstoque = quantidadeEstoque;
 
     };
 
