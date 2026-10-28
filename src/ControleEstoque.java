@@ -4,13 +4,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ControleEstoque {
-  private ArrayList<Produto> estoque = new ArrayList<>();
+
+
+  public ArrayList<Produto> estoque = new ArrayList<>();
 
     // Construtor: Quando criamos o estoque, ele já cadastra os 10 produtos de mercado automaticamente
     public ControleEstoque() {
         this.estoque.addAll(gerarProdutosIniciais());
     }
-
     public List<Produto> gerarProdutosIniciais() {
         List<Produto> produtos = new ArrayList<>();
 
@@ -30,10 +31,11 @@ public class ControleEstoque {
 
     }
 
+    public ArrayList<Produto> getEstoque() {
+        return estoque;
+    }
 
-
-
-public void adicionarProduto(String nome, BigDecimal preco, int quantidadeEstoque) {
+    public void adicionarProduto(String nome, BigDecimal preco, int quantidadeEstoque) {
 
         Produto produto = new Produto(nome, preco, quantidadeEstoque);
          for (int i = 0; i < estoque.size(); i++) {
@@ -49,8 +51,6 @@ public void adicionarProduto(String nome, BigDecimal preco, int quantidadeEstoqu
 
 
     public Produto  listarEstoque(){
-
-
 
         if (estoque.isEmpty()){
             System.out.println("O estoque esta vazio!! Adicione itens para ser listado ");

@@ -8,8 +8,8 @@ public class Main {
 
         Scanner leitor = new Scanner(System.in);
         ControleEstoque controleEstoque = new ControleEstoque();
-
-        controleEstoque.listarEstoque();
+        ItemPedido itemPedido = new ItemPedido();
+        // controleEstoque.listarEstoque();
 
         //===================================================== AREA DO ADM =====================================================
       int opc;
@@ -22,7 +22,7 @@ public class Main {
             System.out.println("[2] Listar produtos  ");
             System.out.println("[3] Deletar produto ");
             System.out.println("[4] Buscar produto por ID ");
-            System.out.println("[5] SAIR ");
+            System.out.println("[5] teste ");
             opc = leitor.nextInt();
 
             switch (opc) {
@@ -73,13 +73,18 @@ public class Main {
 
                 case 4:
                     controleEstoque.buscarPorID();
+            break;
+                case 5:
+                     itemPedido.listar();
+                    break;
             }
-        } while (opc != 5);
+        } while (opc != 6);
 
 //===============================================================================================================
 
+        ////  =====================================   AREA DO CLIETE ========================================
 
-        ////  =======================================   AREA DO CLIETE ========================================
-        Pedido pedido = new Pedido();
+
+
     }
 }
