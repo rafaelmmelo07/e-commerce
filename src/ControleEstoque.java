@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ControleEstoque {
-  private   ArrayList<Produto> estoque = new ArrayList<>();
+  private ArrayList<Produto> estoque = new ArrayList<>();
 
     // Construtor: Quando criamos o estoque, ele já cadastra os 10 produtos de mercado automaticamente
     public ControleEstoque() {
@@ -26,6 +26,8 @@ public class ControleEstoque {
         produtos.add(new Produto(10, "Pacote de Pão de Forma", new BigDecimal("7.50"), 30));
 
         return produtos;
+
+
     }
 
 
@@ -35,8 +37,10 @@ public void adicionarProduto(String nome, BigDecimal preco, int quantidadeEstoqu
 
         Produto produto = new Produto(nome, preco, quantidadeEstoque);
          for (int i = 0; i < estoque.size(); i++) {
-        if (estoque.get(i).getId() == produto.getId()) {
-            produto.AcrecentoID();       //0 Incrementa se o ID for igual
+
+
+             if (estoque.get(i).getId() == produto.getId()){
+            produto.AcrecentoID();       //0 Incrementa se o ID forigual
             i = -1;  // Reinicia a verificação do começo para garantir o novo ID gerado também não repita
         }
     }
@@ -44,7 +48,10 @@ public void adicionarProduto(String nome, BigDecimal preco, int quantidadeEstoqu
 };
 
 
-    public Produto listarEstoque(){
+    public Produto  listarEstoque(){
+
+
+
         if (estoque.isEmpty()){
             System.out.println("O estoque esta vazio!! Adicione itens para ser listado ");
 
@@ -56,8 +63,6 @@ public void adicionarProduto(String nome, BigDecimal preco, int quantidadeEstoqu
                 System.out.println(" NOME: " + produto.getNome());
                 System.out.println(" PRECO: " + produto.getPreco() );
                 System.out.println(" ESTOQUE " + produto.getQuantidadeEstoque()  + "\n");
-
-
             }
         }
         return null;
@@ -95,6 +100,8 @@ public void buscarPorID(){
         }
       }
     }
+
+
 
 
 }

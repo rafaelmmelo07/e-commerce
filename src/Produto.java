@@ -2,7 +2,7 @@ import java.math.BigDecimal;
 
 public class Produto {
     private String nome;
-    private int id = 0;
+    private int id = 10;
     private BigDecimal preco;
     private  int quantidadeEstoque;
 

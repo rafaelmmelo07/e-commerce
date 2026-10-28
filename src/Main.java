@@ -12,77 +12,74 @@ public class Main {
         controleEstoque.listarEstoque();
 
         //===================================================== AREA DO ADM =====================================================
-        int opc;
+      int opc;
         do {
             System.out.println("\n");
-        System.out.println("E-COMMERCE ");
+            System.out.println("E-COMMERCE ");
 
-        System.out.println("PRODUTOS: ");
-        System.out.println("[1] Cadastrar produtos ");
-        System.out.println("[2] Listar produtos  ");
-        System.out.println("[3] Deletar produto ");
-        System.out.println("[4] Buscar produto por ID ");
-        System.out.println("[5] SAIR ");
-        opc= leitor.nextInt();
+            System.out.println("PRODUTOS: ");
+            System.out.println("[1] Cadastrar produtos ");
+            System.out.println("[2] Listar produtos  ");
+            System.out.println("[3] Deletar produto ");
+            System.out.println("[4] Buscar produto por ID ");
+            System.out.println("[5] SAIR ");
+            opc = leitor.nextInt();
 
-  switch (opc){
-      case 1:
-          System.out.println("Digite o nome do produto :");
-          leitor.nextLine();
-          String nome = leitor.nextLine();
+            switch (opc) {
+                case 1:
+                    System.out.println("Digite o nome do produto :");
+                    leitor.nextLine();
+                    String nome = leitor.nextLine();
 
-          System.out.println("Digite o preço ");
-          BigDecimal preco = leitor.nextBigDecimal();
+                    System.out.println("Digite o preço ");
+                    BigDecimal preco = leitor.nextBigDecimal();
 
-          System.out.println("Digite a quantida no estoque");
-          int quantidadeEstoque = leitor.nextInt();
+                    System.out.println("Digite a quantida no estoque");
+                    int quantidadeEstoque = leitor.nextInt();
 
-           controleEstoque.adicionarProduto(nome,preco, quantidadeEstoque);
-           break;
+                    controleEstoque.adicionarProduto(nome, preco, quantidadeEstoque);
+                    break;
 
-      case 2:
-          controleEstoque.listarEstoque();
+                case 2:
+                    controleEstoque.listarEstoque();
+                    break;
 
-  break;
-      case 3:
+                case 3:
+                    int resposta;
 
-          int resposta;
-
-          System.out.println("para consultar os itens no estoque deseja consular a lista de itens \n" +
-                  "[1] Sim \n [2] nao ");
-          resposta = leitor.nextInt();
-
-
-          if (resposta == 1 ){
-              controleEstoque.listarEstoque();
-
-              System.out.println("Digite o numero do item que deseja deletar");
-              leitor.nextLine();
-     int numeroItem = leitor.nextInt();
-
-              controleEstoque.removerEstoque(numeroItem);
+                    System.out.println("para consultar os itens no estoque deseja consular a lista de itens \n" +
+                            "[1] Sim \n [2] nao ");
+                    resposta = leitor.nextInt();
 
 
-          }if (resposta == 2 ){
+                    if (resposta == 1) {
+                        controleEstoque.listarEstoque();
 
-          System.out.println("Digite o numero do item que deseja deletar");
-          int numeroItem = leitor.nextInt();
+                        System.out.println("Digite o numero do item que deseja deletar");
+                        leitor.nextLine();
+                        int numeroItem = leitor.nextInt();
+
+                        controleEstoque.removerEstoque(numeroItem);
 
 
-          controleEstoque.removerEstoque(numeroItem);
-        }
+                    }
+                    if (resposta == 2) {
+                        System.out.println("Digite o numero do item que deseja deletar");
+                        int numeroItem = leitor.nextInt();
 
-      case 4:
-          controleEstoque.buscarPorID();
-  }
-        }while (opc!= 5);
-    }
+                        controleEstoque.removerEstoque(numeroItem);
+                        break;
+                    }
+
+                case 4:
+                    controleEstoque.buscarPorID();
+            }
+        } while (opc != 5);
+
 //===============================================================================================================
 
 
-
-
-    ////  =======================================   AREA DO CLIETE ===================================
-
-
+        ////  =======================================   AREA DO CLIETE ========================================
+        Pedido pedido = new Pedido();
+    }
 }

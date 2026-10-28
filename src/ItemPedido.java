@@ -7,7 +7,6 @@ public class  ItemPedido  extends  ControleEstoque{
 
     public ItemPedido(){}
 
-
     public Produto getProduto() {
         return produto;
     }
@@ -21,10 +20,6 @@ public class  ItemPedido  extends  ControleEstoque{
     };
 
 
-
-public void adicionar(){
-
-
 }
 
-}
+
