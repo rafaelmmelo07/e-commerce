@@ -41,15 +41,13 @@ public class Produto {
         return quantidadeEstoque;
     }
 
-
-public void AcrecentoID(){
+    public void AcrecentoID(){
         this.id = (id + 1);
 }
 
-
-
-
-
+    public void setQuantidadeEstoque(int quantidadeEstoque) {
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
 }
 
 

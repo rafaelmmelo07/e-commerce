@@ -6,12 +6,13 @@ import java.util.Scanner;
 public class ControleEstoque {
 
 
-  public ArrayList<Produto> estoque = new ArrayList<>();
+    public ArrayList<Produto> estoque = new ArrayList<>();
 
     // Construtor: Quando criamos o estoque, ele já cadastra os 10 produtos de mercado automaticamente
     public ControleEstoque() {
         this.estoque.addAll(gerarProdutosIniciais());
     }
+
     public List<Produto> gerarProdutosIniciais() {
         List<Produto> produtos = new ArrayList<>();
 
@@ -28,7 +29,6 @@ public class ControleEstoque {
 
         return produtos;
 
-
     }
 
     public ArrayList<Produto> getEstoque() {
@@ -38,21 +38,20 @@ public class ControleEstoque {
     public void adicionarProduto(String nome, BigDecimal preco, int quantidadeEstoque) {
 
         Produto produto = new Produto(nome, preco, quantidadeEstoque);
-         for (int i = 0; i < estoque.size(); i++) {
+        for (int i = 0; i < estoque.size(); i++) {
 
 
-             if (estoque.get(i).getId() == produto.getId()){
-            produto.AcrecentoID();       //0 Incrementa se o ID forigual
-            i = -1;  // Reinicia a verificação do começo para garantir o novo ID gerado também não repita
+            if (estoque.get(i).getId() == produto.getId()) {
+                produto.AcrecentoID();       //0 Incrementa se o ID forigual
+                i = -1;  // Reinicia a verificação do começo para garantir o novo ID gerado também não repita
+            }
         }
+        estoque.add(produto);
     }
-    estoque.add(produto);
-};
 
+    public Produto listarEstoque() {
 
-    public Produto  listarEstoque(){
-
-        if (estoque.isEmpty()){
+        if (estoque.isEmpty()) {
             System.out.println("O estoque esta vazio!! Adicione itens para ser listado ");
 
         } else {
@@ -61,48 +60,45 @@ public class ControleEstoque {
 
                 System.out.println("NUMERO PRODUTO:  " + produto.getId());
                 System.out.println(" NOME: " + produto.getNome());
-                System.out.println(" PRECO: " + produto.getPreco() );
-                System.out.println(" ESTOQUE " + produto.getQuantidadeEstoque()  + "\n");
+                System.out.println(" PRECO: " + produto.getPreco());
+                System.out.println(" ESTOQUE " + produto.getQuantidadeEstoque() + "\n");
             }
         }
         return null;
-    };
+    }
 
-    public void removerEstoque( int numeroItem){
+    public void removerEstoque(int numeroItem) {
         for (int i = 0; i < estoque.size(); i++) {
-                    if (estoque.get(i).getId() ==
-                            (numeroItem)) {
-                        estoque.remove(i);
-                        return;
-                    }
-                }
+            if (estoque.get(i).getId() == (numeroItem)) {
+                estoque.remove(i);
+                return;
             }
-public void acrecentoID() {
+        }
+    }
+
+
+    public void acrecentoID() {
         for (int i = 0; i < estoque.size(); i++) {
             estoque.get(i).getId();
         }
     }
 
 
-
-public void buscarPorID(){
-    Scanner leitor =  new Scanner(System.in);
+    public void buscarPorID() {
+        Scanner leitor = new Scanner(System.in);
         System.out.println("Digite o id do item que deseja visualizar ");
         int idUsuario = leitor.nextInt();
 
-    for (int i = 0;  i <estoque.size(); i++ ){
-        if (estoque.get(i).getId() ==  idUsuario) {
-            System.out.println(estoque.get(i).getNome());
-            System.out.println(estoque.get(i).getPreco());
-            break;
-        }else {
-            System.out.println("id nao foi encontrado no estoque ");
+        for (int i = 0; i < estoque.size(); i++) {
+            if (estoque.get(i).getId() == idUsuario) {
+                System.out.println(estoque.get(i).getNome());
+                System.out.println(estoque.get(i).getPreco());
+                break;
+            } else {
+                System.out.println("id nao foi encontrado no estoque ");
+            }
         }
-      }
     }
-
-
-
 
 }
 

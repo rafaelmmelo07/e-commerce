@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Pedido {
@@ -11,9 +12,26 @@ public class Pedido {
     public Pedido(ControleEstoque controleEstoque){
         this.controleEstoque = controleEstoque;
     }
-
     public Pedido(){};
 
+
+    public void adicionarItem(Produto produto, Integer quantidade ){
+        if (produto.getQuantidadeEstoque() < quantidade){
+            throw new RuntimeException("Quantodade insuficiente no estoque ");
+        }
+        ItemPedido novoItem = new ItemPedido(produto, quantidade);
+        this.itens.add(novoItem);
+    }
+
+
+
+    public BigDecimal calcularTotal(){
+        BigDecimal total = BigDecimal.ZERO;
+        for (ItemPedido item :  itens){
+            total = total.add(item.calcularTotal());
+        }
+    return total;
+    }
 
     }
 
