@@ -76,12 +76,12 @@ public class ControleEstoque {
         }
     }
 
-
     public void acrecentoID() {
         for (int i = 0; i < estoque.size(); i++) {
             estoque.get(i).getId();
         }
     }
+
 
 
     public void buscarPorID() {

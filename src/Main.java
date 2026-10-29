@@ -75,7 +75,7 @@ public class Main {
                     controleEstoque.buscarPorID();
             break;
                 case 5:
-                     itemPedido.listar();
+
                     break;
             }
         } while (opc != 6);

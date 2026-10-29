@@ -23,8 +23,6 @@ public class Pedido {
         this.itens.add(novoItem);
     }
 
-
-
     public BigDecimal calcularTotal(){
         BigDecimal total = BigDecimal.ZERO;
         for (ItemPedido item :  itens){
@@ -33,6 +31,16 @@ public class Pedido {
     return total;
     }
 
-    }
+    public void iniciar(){
+        if (itens.isEmpty()){
+             System.out.println("lista esta vazia ");
+            }
+
+        for (ItemPedido item : itens){
+            item.getProduto().removerEstoque(item.getQuantidade());
+            }
+        }
+
+}
 
 

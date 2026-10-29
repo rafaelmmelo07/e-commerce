@@ -48,6 +48,14 @@ public class Produto {
     public void setQuantidadeEstoque(int quantidadeEstoque) {
         this.quantidadeEstoque = quantidadeEstoque;
     }
+
+    public void removerEstoque(Integer quantidade ){
+            if(quantidade > this.quantidadeEstoque){
+                System.out.println("Quantidade insuficiente no estoque ");
+            }
+            this.quantidadeEstoque -= quantidade;
+    }
+
 }
 
 
