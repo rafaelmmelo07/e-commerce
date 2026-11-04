@@ -83,24 +83,16 @@ public class ControleEstoque {
     }
 
 
-
-    public void buscarPorID() {
-        Scanner leitor = new Scanner(System.in);
-        System.out.println("Digite o id do item que deseja visualizar ");
-        int idUsuario = leitor.nextInt();
-
-        for (int i = 0; i < estoque.size(); i++) {
-            if (estoque.get(i).getId() == idUsuario) {
-                System.out.println(estoque.get(i).getNome());
-                System.out.println(estoque.get(i).getPreco());
-                break;
-            } else {
-                System.out.println("id nao foi encontrado no estoque ");
+    public Produto buscarPorID(int id) {
+        for (Produto p : estoque){
+            if (p.getId() ==  id){
+                System.out.println(p.getNome());;
+                System.out.println(p.getPreco());
             }
-        }
-    }
-
+        } return null;
+    };
 }
+
 
 
 

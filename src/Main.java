@@ -72,7 +72,9 @@ public class Main {
                     }
 
                 case 4:
-                    controleEstoque.buscarPorID();
+                    System.out.println("digite o ID do item que deseja buscar ");
+                    int idProduto = leitor.nextInt();
+                    controleEstoque.buscarPorID(idProduto);
             break;
                 case 5:
 
@@ -83,6 +85,17 @@ public class Main {
 //===============================================================================================================
 
         ////  =====================================   AREA DO CLIETE ========================================
+        System.out.println("Digite o Id do produto que deseja comprar ");
+        int idProduto = leitor.nextInt();
+        Produto produtoEscolhido = controleEstoque.buscarPorID(idProduto);
+
+
+        System.out.println("Digite a quantidade que deseja ");
+      int quantidade = leitor.nextInt();
+        Pedido pedido = new Pedido();
+
+        pedido.adicionarItem(produtoEscolhido, quantidade);
+
 
 
 
