@@ -15,13 +15,24 @@ public class Pedido {
     public Pedido(){};
 
 
-    public void adicionarItem(Produto produto, Integer quantidade ){
+    public void adicionarItem(Produto produto, int quantidade ){
+
+        if (produto == null){
+            System.out.println("Produto nao foi encontrado chegou com o valor de null");
+        }else {
+
         if (produto.getQuantidadeEstoque() < quantidade){
             throw new RuntimeException("Quantodade insuficiente no estoque ");
         }
         ItemPedido novoItem = new ItemPedido(produto, quantidade);
         this.itens.add(novoItem);
+        System.out.println("Item foi adicionado ao carrinho de compra ");
+        }
     }
+
+
+
+
 
     public BigDecimal calcularTotal(){
         BigDecimal total = BigDecimal.ZERO;

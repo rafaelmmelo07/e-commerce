@@ -9,10 +9,10 @@ public class Main {
         Scanner leitor = new Scanner(System.in);
         ControleEstoque controleEstoque = new ControleEstoque();
         ItemPedido itemPedido = new ItemPedido();
-        // controleEstoque.listarEstoque();
+        controleEstoque.listarEstoque();
 
         //===================================================== AREA DO ADM =====================================================
-      int opc;
+      /*int opc;
         do {
             System.out.println("\n");
             System.out.println("E-COMMERCE ");
@@ -44,8 +44,12 @@ public class Main {
                     controleEstoque.listarEstoque();
                     break;
 
+
+
                 case 3:
-                    int resposta;
+
+               int resposta;
+
 
                     System.out.println("para consultar os itens no estoque deseja consular a lista de itens \n" +
                             "[1] Sim \n [2] nao ");
@@ -81,7 +85,7 @@ public class Main {
                     break;
             }
         } while (opc != 6);
-
+*/
 //===============================================================================================================
 
         ////  =====================================   AREA DO CLIETE ========================================

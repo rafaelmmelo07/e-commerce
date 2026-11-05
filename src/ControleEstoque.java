@@ -85,11 +85,12 @@ public class ControleEstoque {
 
     public Produto buscarPorID(int id) {
         for (Produto p : estoque){
-            if (p.getId() ==  id){
-                System.out.println(p.getNome());;
+            if (p.getId() ==  id) {
+                System.out.println(p.getNome());
                 System.out.println(p.getPreco());
             }
-        } return null;
+        }
+        return null;
     };
 }
 
