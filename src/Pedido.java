@@ -1,10 +1,11 @@
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
     private Long id ;
     private Cliente cliente;
-    private List <ItemPedido> itens;
+    private List <ItemPedido> itens =  new ArrayList<>();
     private ControleEstoque controleEstoque;
 
     private Boolean statusPedido;
@@ -25,14 +26,10 @@ public class Pedido {
             throw new RuntimeException("Quantodade insuficiente no estoque ");
         }
         ItemPedido novoItem = new ItemPedido(produto, quantidade);
-        this.itens.add(novoItem);
+        itens.add(novoItem);
         System.out.println("Item foi adicionado ao carrinho de compra ");
         }
     }
-
-
-
-
 
     public BigDecimal calcularTotal(){
         BigDecimal total = BigDecimal.ZERO;

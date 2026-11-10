@@ -23,8 +23,8 @@ public class ItemPedido {
 
     public BigDecimal calcularTotal(){
         return  produto.getPreco().multiply(new BigDecimal(quantidade));
-    }
 
+    }
 }
 
 

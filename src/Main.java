@@ -12,7 +12,7 @@ public class Main {
         controleEstoque.listarEstoque();
 
         //===================================================== AREA DO ADM =====================================================
-      /*int opc;
+        int opc;
         do {
             System.out.println("\n");
             System.out.println("E-COMMERCE ");
@@ -22,7 +22,7 @@ public class Main {
             System.out.println("[2] Listar produtos  ");
             System.out.println("[3] Deletar produto ");
             System.out.println("[4] Buscar produto por ID ");
-            System.out.println("[5] teste ");
+            System.out.println("[5] Area do cliente  ");
             opc = leitor.nextInt();
 
             switch (opc) {
@@ -45,11 +45,9 @@ public class Main {
                     break;
 
 
-
                 case 3:
 
-               int resposta;
-
+                    int resposta;
 
                     System.out.println("para consultar os itens no estoque deseja consular a lista de itens \n" +
                             "[1] Sim \n [2] nao ");
@@ -79,29 +77,28 @@ public class Main {
                     System.out.println("digite o ID do item que deseja buscar ");
                     int idProduto = leitor.nextInt();
                     controleEstoque.buscarPorID(idProduto);
-            break;
+                    break;
                 case 5:
 
-                    break;
-            }
-        } while (opc != 6);
-*/
 //===============================================================================================================
 
-        ////  =====================================   AREA DO CLIETE ========================================
-        System.out.println("Digite o Id do produto que deseja comprar ");
-        int idProduto = leitor.nextInt();
-        Produto produtoEscolhido = controleEstoque.buscarPorID(idProduto);
+                ////  =====================================   AREA DO CLIETE ========================================
+                System.out.println("Digite o Id do produto que deseja comprar ");
+                   int idDoProduto = leitor.nextInt();
+                Produto produtoEscolhido = controleEstoque.buscarPorID(idDoProduto);
 
 
-        System.out.println("Digite a quantidade que deseja ");
-      int quantidade = leitor.nextInt();
-        Pedido pedido = new Pedido();
+                System.out.println("Digite a quantidade que deseja ");
+                int quantidade = leitor.nextInt();
+                Pedido pedido = new Pedido();
 
-        pedido.adicionarItem(produtoEscolhido, quantidade);
+                pedido.adicionarItem(produtoEscolhido, quantidade);
 
-
+                break;
+            }
+        } while (opc != 6);
 
 
     }
+
 }
