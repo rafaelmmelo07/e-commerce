@@ -8,6 +8,9 @@ public class Main {
 
         Scanner leitor = new Scanner(System.in);
         ControleEstoque controleEstoque = new ControleEstoque();
+
+        Pedido pedido = new Pedido(controleEstoque);
+
         ItemPedido itemPedido = new ItemPedido();
         controleEstoque.listarEstoque();
 
@@ -49,8 +52,7 @@ public class Main {
 
                     int resposta;
 
-                    System.out.println("para consultar os itens no estoque deseja consular a lista de itens \n" +
-                            "[1] Sim \n [2] nao ");
+                    System.out.println("para consultar os itens no estoque deseja consular a lista de itens \n" + "[1] Sim \n [2] nao ");
                     resposta = leitor.nextInt();
 
 
@@ -82,21 +84,25 @@ public class Main {
 
 //===============================================================================================================
 
-                ////  =====================================   AREA DO CLIETE ========================================
-                System.out.println("Digite o Id do produto que deseja comprar ");
-                   int idDoProduto = leitor.nextInt();
-                Produto produtoEscolhido = controleEstoque.buscarPorID(idDoProduto);
+                    ////  =====================================   AREA DO CLIETE ========================================
+
+                    System.out.println("Digite o Id do produto que deseja comprar ");
+                    int idDoProduto = leitor.nextInt();
+
+                    Produto produtoEscolhido = controleEstoque.buscarPorID(idDoProduto); //retorna dados do produto e busca ele pelo id (quem ta escrevendo isso é o rafael nd de IA nao )
 
 
-                System.out.println("Digite a quantidade que deseja ");
-                int quantidade = leitor.nextInt();
-                Pedido pedido = new Pedido();
 
-                pedido.adicionarItem(produtoEscolhido, quantidade);
+                    System.out.println("Digite a quantidade que deseja ");
+                    int quantidade = leitor.nextInt();
 
-                break;
+                    pedido.adicionarItem(produtoEscolhido, quantidade);
+                    pedido.iniciar(controleEstoque);
+                    pedido.calcularTotal();
+
+                    break;
             }
-        } while (opc != 6);
+        } while (opc != 8);
 
 
     }
