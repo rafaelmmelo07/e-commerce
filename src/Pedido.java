@@ -24,14 +24,12 @@ public class Pedido {
         } else {
 
             if (produto.getQuantidadeEstoque() < quantidade) {
-                throw new RuntimeException("Quantodade insuficiente no estoque ");
+                throw new EstoqueInsuficienteException("Quantidade insuficiente no estoque ");
             }
             ItemPedido novoItem = new ItemPedido(produto, quantidade);
             itens.add(novoItem);
             System.out.println("Produto adicionado ao carrinho com sucesso !!!");
             return novoItem;
-
-
         }
 
         return null;
@@ -48,8 +46,8 @@ public class Pedido {
 
     public void iniciar(ControleEstoque controleEstoque) {
         if (itens.isEmpty()) {
-            System.out.println("lista esta vazia ");
-            return;
+            throw  new PedidoVazioException("PEDIDO ESTA VAZIO ");
+
         }
         for (ItemPedido item : itens) {
             item.getProduto().removerEstoque(item.getQuantidade());

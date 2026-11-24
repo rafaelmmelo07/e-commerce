@@ -4,7 +4,7 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public static  void main(String[] args) {
 
         Scanner leitor = new Scanner(System.in);
         ControleEstoque controleEstoque = new ControleEstoque();
@@ -14,6 +14,8 @@ public class Main {
         ItemPedido itemPedido = new ItemPedido();
         controleEstoque.listarEstoque();
 
+
+        Boolean statusPedido = null;
         //===================================================== AREA DO ADM =====================================================
         int opc;
         do {
@@ -26,6 +28,7 @@ public class Main {
             System.out.println("[3] Deletar produto ");
             System.out.println("[4] Buscar produto por ID ");
             System.out.println("[5] Area do cliente  ");
+            System.out.println("[6] Sair");
             opc = leitor.nextInt();
 
             switch (opc) {
@@ -83,26 +86,39 @@ public class Main {
                 case 5:
 
 //===============================================================================================================
-
                     ////  =====================================   AREA DO CLIETE ========================================
 
-                    System.out.println("Digite o Id do produto que deseja comprar ");
-                    int idDoProduto = leitor.nextInt();
+                    int ops;
+                    do {
+                        System.out.println("Digite o Id do produto que deseja comprar ");
+                        int idDoProduto = leitor.nextInt();
 
-                    Produto produtoEscolhido = controleEstoque.buscarPorID(idDoProduto); //retorna dados do produto e busca ele pelo id (quem ta escrevendo isso é o rafael nd de IA nao )
+                        Produto produtoEscolhido = controleEstoque.buscarPorID(idDoProduto); //retorna dados do produto e busca ele pelo id (quem ta escrevendo isso é o rafael nd de IA nao )
+
+
+                        System.out.println("Digite a quantidade que deseja ");
+                        int quantidade = leitor.nextInt();
+
+                        pedido.adicionarItem(produtoEscolhido, quantidade);
 
 
 
-                    System.out.println("Digite a quantidade que deseja ");
-                    int quantidade = leitor.nextInt();
+                        System.out.println("Deseja adicionar mais itens no carrinho ");
+                        System.out.println("[1] ADICIONAR ");
+                        System.out.println("[2] PAGAR ");
+                        ops = leitor.nextInt();
 
-                    pedido.adicionarItem(produtoEscolhido, quantidade);
+
+                    } while (ops == 1);
+
+                    statusPedido = true;
                     pedido.iniciar(controleEstoque);
                     pedido.calcularTotal();
-
                     break;
+
+
             }
-        } while (opc != 8);
+        } while (opc != 6);
 
 
     }

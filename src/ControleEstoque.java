@@ -84,17 +84,17 @@ public class ControleEstoque {
 
 
     public Produto buscarPorID(int id) {
-        for (Produto p : estoque){
-            if (p.getId() ==  id) {
+        for (Produto p : estoque) {
+            if (p.getId()== id){
                 System.out.println(p.getNome());
                 System.out.println(p.getPreco());
                 return p;
             }
         }
-        return null;
-    };
-}
+        throw new RuntimeException("Nao foi possivel localizar o produto ( ID NULO )");
 
+    }
+}
 
 
 
