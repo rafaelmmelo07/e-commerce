@@ -67,7 +67,7 @@ public class Main {
                         int numeroItem = leitor.nextInt();
 
                         controleEstoque.removerEstoque(numeroItem);
-
+break;
 
                     }
                     if (resposta == 2) {

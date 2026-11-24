@@ -25,6 +25,7 @@ public class Pedido {
 
             if (produto.getQuantidadeEstoque() < quantidade) {
                 throw new EstoqueInsuficienteException("Quantidade insuficiente no estoque ");
+
             }
             ItemPedido novoItem = new ItemPedido(produto, quantidade);
             itens.add(novoItem);

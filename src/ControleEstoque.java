@@ -27,9 +27,7 @@ public class ControleEstoque {
         produtos.add(new Produto(9, "Carne Bovina Moída 1kg", new BigDecimal("32.50"), 15));
         produtos.add(new Produto(10, "Pacote de Pão de Forma", new BigDecimal("7.50"), 30));
 
-        return produtos;
-
-    }
+        return produtos;  }
 
     public ArrayList<Produto> getEstoque() {
         return estoque;
@@ -42,7 +40,7 @@ public class ControleEstoque {
 
 
             if (estoque.get(i).getId() == produto.getId()) {
-                produto.AcrecentoID();       //0 Incrementa se o ID forigual
+                produto.AcrecentoID();    //0 Incrementa se o ID forigual
                 i = -1;  // Reinicia a verificação do começo para garantir o novo ID gerado também não repita
             }
         }
